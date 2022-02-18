@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { AddArticleComponent } from './add-article/add-article.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -25,7 +25,8 @@ import { AddArticleComponent } from './add-article/add-article.component';
     BrowserModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

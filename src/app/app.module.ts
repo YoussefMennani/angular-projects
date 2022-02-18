@@ -11,6 +11,9 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { AddArticleComponent } from './add-article/add-article.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { IndexComponent } from './pages/index/index.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 
 
@@ -19,14 +22,17 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     NavbarComponent,
     CardComponent,
-    AddArticleComponent
+    AddArticleComponent,
+    IndexComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatDialogModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent],

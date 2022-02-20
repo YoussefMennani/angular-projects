@@ -15,6 +15,8 @@ import { RouterModule } from '@angular/router';
 import { IndexComponent } from './pages/index/index.component';
 import { ContactComponent } from './pages/contact/contact.component';
 
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -32,7 +34,11 @@ import { ContactComponent } from './pages/contact/contact.component';
     MatDialogModule,
     MatButtonModule,
     HttpClientModule,
-    RouterModule.forRoot([])
+    RouterModule.forRoot([]),
+    FormsModule,
+    ReactiveFormsModule
+  
+  
   ],
   providers: [],
   bootstrap: [AppComponent],

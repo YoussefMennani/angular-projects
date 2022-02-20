@@ -12,4 +12,9 @@ export class PosteService {
   getPoste(){
     return this.http.get(this.url);
   }
+
+  addPoste(posteData:any){
+    console.log(posteData);
+    return this.http.post(posteData,this.url);
+  }
 }

@@ -1,15 +1,22 @@
 <h1>Ajouter un Poste</h1>
-
+<form [formGroup]="form" >
 <div class="form-group">
   <label for="title">Ajouter un Titre x</label>
-  <input type="text" class="form-control" name="title" id="title" aria-describedby="helpId" placeholder="">
-  <small id="helpId" class="form-text text-muted">Help text</small>
+  <input type="text" class="form-control" formControlName="titre" id="title" aria-describedby="helpId" placeholder="">
+  <div *ngIf="titre?.touched && titre?.invalid">
+    <small id="helpId" class="form-text text-danger" *ngIf="titre?.errors?.['required']">Obligatoire !</small>
+    <small id="helpId" class="form-text text-danger" *ngIf="titre?.errors?.['minlength']">Minlength !</small>
+  </div>
 </div>
 
 <div class="form-group my-3">
   <label for="description">Description</label>
-  <textarea class="form-control" name="description" id="description" rows="3"></textarea>
-  <small id="helpId" class="form-text text-muted">Help text</small>
+  <textarea class="form-control" formControlName="description" id="description" rows="3"></textarea>
+  <div *ngIf="description?.touched">
+  <small id="helpId" class="form-text text-danger" *ngIf="description?.errors?.['required']">Obligatoire !</small>
+  <small id="helpId" class="form-text text-danger" *ngIf="description?.errors?.['minlength']">Minlength !</small>
+</div>
+
 </div>
 
 <div class="form-group my-3">
@@ -19,5 +26,8 @@
 
 
 <div class="form-group my-3 offset-md-8">
-<button class="btn btn-success" style="width: 100%;">Ajouter</button>
+<button class="btn btn-success" (click)="addPoste()">Ajouter</button>
 </div>
+
+
+</form>
